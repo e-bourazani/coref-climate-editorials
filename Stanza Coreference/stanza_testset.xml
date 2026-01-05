@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='utf-8'?>
+<corpus model="stanza">
+  <article id="227646a0.ocr.txt">
+    <cluster id="c1">
+      <mention>The first report of Mr Russell Train's Council on Environmental Quality is</mention>
+      <mention>judicious mixture of tubthumping , political savvy , popular science and good sense .</mention>
+      <mention>It</mention>
+      <mention>the report</mention>
+      <mention>Its first report would</mention>
+      <mention>had</mention>
+      <mention>the report</mention>
+      <mention>It</mention>
+      <mention>Mr Train's report points</mention>
+      <mention>Mr Train's report is</mention>
+      <mention>has</mention>
+      <mention>report )</mention>
+      <mention>the council's report is</mention>
+      <mention>is</mention>
+      <mention>his report</mention>
+    </cluster>
+    <cluster id="c2">
+      <mention>Mr Russell Train's Council</mention>
+      <mention>Mr Train's council</mention>
+      <mention>Mr Train's report</mention>
+      <mention>Mr Train's</mention>
+      <mention>Mr Train</mention>
+      <mention>Mr Train</mention>
+      <mention>his</mention>
+      <mention>Mr Train</mention>
+      <mention>he</mention>
+    </cluster>
+    <cluster id="c3">
+      <mention>Mr Russell Train's Council on Environmental Quality is</mention>
+      <mention>the Council on Environmental Quality</mention>
+      <mention>Mr Train's council is</mention>
+      <mention>Its first</mention>
+      <mention>the council</mention>
+      <mention>the council's</mention>
+      <mention>the council's</mention>
+      <mention>the council</mention>
+      <mention>it</mention>
+      <mention>it</mention>
+      <mention>The council</mention>
+      <mention>its</mention>
+      <mention>it</mention>
+      <mention>it</mention>
+      <mention>the council</mention>
+    </cluster>
+    <cluster id="c4">
+      <mention>Quality is</mention>
+      <mention>Environmental Quality</mention>
+    </cluster>
+    <cluster id="c5">
+      <mention>President Nixon</mention>
+      <mention>The President</mention>
+      <mention>himself</mention>
+      <mention>his</mention>
+      <mention>President has</mention>
+    </cluster>
+    <cluster id="c6">
+      <mention>a people</mention>
+      <mention>its</mention>
+    </cluster>
+    <cluster id="c7">
+      <mention>the Administration</mention>
+      <mention>Executive Branch and</mention>
+      <mention>the Administration</mention>
+      <mention>it</mention>
+    </cluster>
+    <cluster id="c8">
+      <mention>the environment</mention>
+      <mention>the environment</mention>
+      <mention>the environment</mention>
+      <mention>the environment</mention>
+      <mention>the environment</mention>
+      <mention>the environment</mention>
+      <mention>one global piece</mention>
+    </cluster>
+    <cluster id="c9">
+      <mention>the setting up of the Council on Environmental Quality</mention>
+      <mention>the first sign of the way in which the wind was blowing</mention>
+      <mention>this</mention>
+    </cluster>
+    <cluster id="c10">
+      <mention>the myth that flits from one dinner table to another to the effect that economic growth as such is a potential hazard to the quality of life</mention>
+      <mention>the myth</mention>
+    </cluster>
+    <cluster id="c11">
+      <mention>economic growth as such</mention>
+      <mention>a potential hazard to the quality of life</mention>
+    </cluster>
+    <cluster id="c12">
+      <mention>all power stations</mention>
+      <mention>their</mention>
+    </cluster>
+    <cluster id="c13">
+      <mention>hot water</mention>
+      <mention>the cause of thermal pollution as it is called</mention>
+      <mention>it</mention>
+    </cluster>
+    <cluster id="c14">
+      <mention>electricity</mention>
+      <mention>electricity</mention>
+    </cluster>
+    <cluster id="c15">
+      <mention>electricity production</mention>
+      <mention>a monotonically increasing function of the GNP</mention>
+    </cluster>
+    <cluster id="c16">
+      <mention>the GNP</mention>
+      <mention>more GNP</mention>
+      <mention>GNP of a nation such as the United States by</mention>
+      <mention>GNP ,</mention>
+      <mention>a GNP per head</mention>
+    </cluster>
+    <cluster id="c17">
+      <mention>United States by</mention>
+      <mention>United States (</mention>
+      <mention>the United States</mention>
+      <mention>the United States</mention>
+    </cluster>
+    <cluster id="c18">
+      <mention>compulsory</mention>
+      <mention>fit anti-pollution devices to the exhaust systems of automobiles ,</mention>
+    </cluster>
+    <cluster id="c19">
+      <mention>in</mention>
+      <mention>land</mention>
+    </cluster>
+    <cluster id="c20">
+      <mention>local communities</mention>
+      <mention>their</mention>
+      <mention>them</mention>
+    </cluster>
+    <cluster id="c21">
+      <mention>the atmosphere</mention>
+      <mention>the atmosphere</mention>
+      <mention>the atmosphere</mention>
+    </cluster>
+    <cluster id="c22">
+      <mention>a city</mention>
+      <mention>its</mention>
+    </cluster>
+    <cluster id="c23">
+      <mention>cooperative air conditioning</mention>
+      <mention>the only feasible solution</mention>
+    </cluster>
+    <cluster id="c24">
+      <mention>the institutions set up in Washington in the past few months as devices for persuading voters that something is now about to be done to safeguard the environment</mention>
+      <mention>devices for persuading voters that something is now about to be done to safeguard the environment</mention>
+      <mention>these devices</mention>
+    </cluster>
+    <cluster id="c25">
+      <mention>the past few months</mention>
+      <mention>the past few months</mention>
+    </cluster>
+    <cluster id="c26">
+      <mention>Mr Train goes much further than previous sponsors of reports on the environment in drawing attention to the simple proposition that the environment is ultimately indivisible</mention>
+      <mention>this</mention>
+    </cluster>
+    <cluster id="c27">
+      <mention>the simple proposition that the environment is ultimately indivisible</mention>
+      <mention>this point of view</mention>
+    </cluster>
+    <cluster id="c28">
+      <mention>the world</mention>
+      <mention>the world</mention>
+    </cluster>
+    <cluster id="c29">
+      <mention>populations now graduating from bicycles to motor cars</mention>
+      <mention>populations now struggling with a GNP per head which is hardly more than one per cent of that in the United States</mention>
+    </cluster>
+    <cluster id="c30">
+      <mention>automobile exhausts</mention>
+      <mention>such a serious nuisance that their use should be severely curtailed</mention>
+      <mention>their</mention>
+    </cluster>
+    <cluster id="c31">
+      <mention>to detach separate problems of air pollution from problems of foreign aid</mention>
+      <mention>this test</mention>
+    </cluster>
+  </article>
+  <article id="458679b.ocr.txt">
+    <cluster id="c1">
+      <mention>Mrs Margaret Thatcher's crusade</mention>
+      <mention>to</mention>
+      <mention>the British Prime Minister's zeal</mention>
+      <mention>Mrs Thatcher</mention>
+    </cluster>
+    <cluster id="c2">
+      <mention>ozone layer should</mention>
+      <mention>ozone layer ,</mention>
+      <mention>the ozone layer</mention>
+    </cluster>
+    <cluster id="c3">
+      <mention>rest of us will</mention>
+      <mention>sunbathe</mention>
+    </cluster>
+    <cluster id="c4">
+      <mention>rest of us will be able to sleep more soundly when we sunbathe .</mention>
+      <mention>That</mention>
+      <mention>one of the lessons to be drawn from the conference in London at the weekend ( see page 101 ) , when Mrs Thatcher recruited a further score of signatures for the Montreal Protocol which commits its signatories to a 50 per cent reduction of eight chemicals believed to affect the ozone layer</mention>
+    </cluster>
+    <cluster id="c5">
+      <mention>London</mention>
+      <mention>Montreal</mention>
+      <mention>Protocol</mention>
+    </cluster>
+    <cluster id="c6">
+      <mention>the Montreal Protocol which commits its signatories to a 50 per cent reduction of eight chemicals believed to affect the ozone layer</mention>
+      <mention>its</mention>
+      <mention>Montreal Protocol is</mention>
+      <mention>is</mention>
+      <mention>precedent for the much more constraining convention there will have to be if</mention>
+    </cluster>
+    <cluster id="c7">
+      <mention>a 50 per cent reduction of eight chemicals believed to affect the ozone layer</mention>
+      <mention>That</mention>
+      <mention>a considerable achievement for the persuasiveness of conviction</mention>
+    </cluster>
+    <cluster id="c8">
+      <mention>dioxide so</mention>
+      <mention>dioxide will</mention>
+      <mention>is</mention>
+      <mention>by - product of most economic activity .</mention>
+      <mention>that</mention>
+    </cluster>
+  </article>
+  <article id="416567b.ocr.txt">
+    <cluster id="c1">
+      <mention>US</mention>
+      <mention>US</mention>
+      <mention>Global</mention>
+      <mention>the United States' programme</mention>
+      <mention>considerable</mention>
+      <mention>US</mention>
+    </cluster>
+    <cluster id="c2">
+      <mention>US climate research</mention>
+      <mention>change research should</mention>
+      <mention>US climate - change research</mention>
+    </cluster>
+    <cluster id="c3">
+      <mention>a revamp that may provide political leaders with better scientific information</mention>
+      <mention>the revamp</mention>
+    </cluster>
+    <cluster id="c4">
+      <mention>political leaders</mention>
+      <mention>they</mention>
+    </cluster>
+    <cluster id="c5">
+      <mention>global warming</mention>
+      <mention>global warming</mention>
+      <mention>global warming</mention>
+      <mention>a real problem</mention>
+      <mention>It</mention>
+      <mention>problem and</mention>
+      <mention>.</mention>
+    </cluster>
+    <cluster id="c6">
+      <mention>President George W. Bush</mention>
+      <mention>his</mention>
+      <mention>his</mention>
+      <mention>Bush's science</mention>
+      <mention>father to</mention>
+    </cluster>
+    <cluster id="c7">
+      <mention>his administration</mention>
+      <mention>its</mention>
+      <mention>the Bush administration</mention>
+      <mention>the government's research</mention>
+      <mention>the US government</mention>
+      <mention>the administration</mention>
+    </cluster>
+    <cluster id="c8">
+      <mention>the Kyoto Protocol</mention>
+      <mention>place</mention>
+    </cluster>
+    <cluster id="c9">
+      <mention>the respected atmospheric scientist</mention>
+      <mention>Robert Watson</mention>
+    </cluster>
+    <cluster id="c10">
+      <mention>considerable concern about global warming</mention>
+      <mention>this unease</mention>
+    </cluster>
+    <cluster id="c11">
+      <mention>John Marburger</mention>
+      <mention>Bush's science adviser ,</mention>
+      <mention>Marburger</mention>
+    </cluster>
+    <cluster id="c12">
+      <mention>review of the US Global Climate Change Research Program , which was set up by Bush's father to coordinate this research ( see</mention>
+      <mention>This attention</mention>
+    </cluster>
+    <cluster id="c13">
+      <mention>Change Research</mention>
+      <mention>change research</mention>
+      <mention>climate - change</mention>
+    </cluster>
+    <cluster id="c14">
+      <mention>Modellers</mention>
+      <mention>they</mention>
+    </cluster>
+    <cluster id="c15">
+      <mention>supercomputer capacity</mention>
+      <mention>it</mention>
+    </cluster>
+    <cluster id="c16">
+      <mention>some</mention>
+      <mention>will</mention>
+    </cluster>
+    <cluster id="c17">
+      <mention>Japan's new Earth Simulator facility ,</mention>
+      <mention>machine (</mention>
+    </cluster>
+    <cluster id="c18">
+      <mention>that is not obsessed with providing short - term answers and dubious technological fixes</mention>
+      <mention>this mistake</mention>
+    </cluster>
+  </article>
+</corpus>

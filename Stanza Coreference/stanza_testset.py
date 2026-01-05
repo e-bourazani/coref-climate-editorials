@@ -32,3 +32,16 @@ def stanza_clusters(doc):
 for i, doc in enumerate(stanza_docs):
     print(f"\nARTICLE {i}")
     print(stanza_clusters(doc))
+
+#save output to json
+stanza_out = []
+
+for article, doc in zip(test_articles, stanza_docs):
+    stanza_out.append({
+        "article_id": article["article_id"],
+        "clusters": stanza_clusters(doc)
+    })
+
+with open("stanza_testset.json", "w") as f:
+    json.dump(stanza_out, f, indent=2)
+
