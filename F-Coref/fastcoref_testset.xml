@@ -105,24 +105,24 @@
     </cluster>
   </article>
   <article id="458679b.ocr.txt">
-    <cluster id="c1">
+    <cluster id="c1" correct="yes">
       <mention>Mrs Margaret Thatcher's</mention>
       <mention>her</mention>
       <mention>the British Prime Minister's</mention>
       <mention>Mrs Thatcher</mention>
     </cluster>
-    <cluster id="c2">
+    <cluster id="c2" correct="yes">
       <mention>the ozone layer</mention>
       <mention>the ozone layer</mention>
       <mention>the ozone layer</mention>
     </cluster>
-    <cluster id="c3">
+    <cluster id="c3" correct="yes">
       <mention>the Montreal Protocol which commits its signatories to a 50 per cent reduction of eight chemicals believed to affect the ozone layer</mention>
       <mention>its</mention>
       <mention>the Montreal Protocol</mention>
       <mention>it</mention>
     </cluster>
-    <cluster id="c4">
+    <cluster id="c4" correct="no">
       <mention>recruited</mention>
       <mention>That</mention>
     </cluster>

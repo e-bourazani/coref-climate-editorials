@@ -181,44 +181,44 @@
     </cluster>
   </article>
   <article id="458679b.ocr.txt">
-    <cluster id="c1">
+    <cluster id="c1" correct="partially">
       <mention>Mrs Margaret Thatcher's crusade</mention>
       <mention>to</mention>
       <mention>the British Prime Minister's zeal</mention>
       <mention>Mrs Thatcher</mention>
     </cluster>
-    <cluster id="c2">
+    <cluster id="c2" correct="partially">
       <mention>ozone layer should</mention>
       <mention>ozone layer ,</mention>
       <mention>the ozone layer</mention>
     </cluster>
-    <cluster id="c3">
+    <cluster id="c3" correct="no">
       <mention>rest of us will</mention>
       <mention>sunbathe</mention>
     </cluster>
-    <cluster id="c4">
+    <cluster id="c4" correct="no">
       <mention>rest of us will be able to sleep more soundly when we sunbathe .</mention>
       <mention>That</mention>
       <mention>one of the lessons to be drawn from the conference in London at the weekend ( see page 101 ) , when Mrs Thatcher recruited a further score of signatures for the Montreal Protocol which commits its signatories to a 50 per cent reduction of eight chemicals believed to affect the ozone layer</mention>
     </cluster>
-    <cluster id="c5">
+    <cluster id="c5" correct="no">
       <mention>London</mention>
       <mention>Montreal</mention>
       <mention>Protocol</mention>
     </cluster>
-    <cluster id="c6">
+    <cluster id="c6" correct="partially">
       <mention>the Montreal Protocol which commits its signatories to a 50 per cent reduction of eight chemicals believed to affect the ozone layer</mention>
       <mention>its</mention>
       <mention>Montreal Protocol is</mention>
       <mention>is</mention>
       <mention>precedent for the much more constraining convention there will have to be if</mention>
     </cluster>
-    <cluster id="c7">
+    <cluster id="c7" correct="no">
       <mention>a 50 per cent reduction of eight chemicals believed to affect the ozone layer</mention>
       <mention>That</mention>
       <mention>a considerable achievement for the persuasiveness of conviction</mention>
     </cluster>
-    <cluster id="c8">
+    <cluster id="c8" correct="no">
       <mention>dioxide so</mention>
       <mention>dioxide will</mention>
       <mention>is</mention>
