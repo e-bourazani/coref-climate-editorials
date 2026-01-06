@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <corpus model="fastcoref">
   <article id="227646a0.ocr.txt">
-    <cluster id="c1">
+    <cluster id="c1" correct="yes">
       <mention>The first report of Mr Russell Train's Council on Environmental Quality</mention>
       <mention>It</mention>
       <mention>the report</mention>
@@ -17,18 +17,18 @@
       <mention>it</mention>
       <mention>his report</mention>
     </cluster>
-    <cluster id="c2">
+    <cluster id="c2" correct="yes">
       <mention>a people</mention>
       <mention>its</mention>
     </cluster>
-    <cluster id="c3">
+    <cluster id="c3" correct="yes">
       <mention>President Nixon</mention>
       <mention>The President</mention>
       <mention>himself</mention>
       <mention>his</mention>
       <mention>the President</mention>
     </cluster>
-    <cluster id="c4">
+    <cluster id="c4" correct="yes">
       <mention>Mr Russell Train's Council on Environmental Quality</mention>
       <mention>the Council on Environmental Quality</mention>
       <mention>even Mr Train's council</mention>
@@ -45,19 +45,19 @@
       <mention>it</mention>
       <mention>the council</mention>
     </cluster>
-    <cluster id="c5">
+    <cluster id="c5" correct="no">
       <mention>was</mention>
       <mention>this</mention>
     </cluster>
-    <cluster id="c6">
+    <cluster id="c6" correct="yes">
       <mention>the myth that flits from one dinner table to another to the effect that economic growth as such is a potential hazard to the quality of life</mention>
       <mention>the myth</mention>
     </cluster>
-    <cluster id="c7">
+    <cluster id="c7" correct="yes">
       <mention>all power stations</mention>
       <mention>their</mention>
     </cluster>
-    <cluster id="c8">
+    <cluster id="c8" correct="yes">
       <mention>Mr Russell Train's</mention>
       <mention>Mr Train's</mention>
       <mention>Mr Train's</mention>
@@ -67,39 +67,39 @@
       <mention>Mr Train</mention>
       <mention>he</mention>
     </cluster>
-    <cluster id="c9">
+    <cluster id="c9" correct="yes">
       <mention>the GNP</mention>
       <mention>the GNP</mention>
     </cluster>
-    <cluster id="c10">
+    <cluster id="c10" correct="yes">
       <mention>the United States</mention>
       <mention>the United States</mention>
       <mention>the United States</mention>
       <mention>the United States</mention>
     </cluster>
-    <cluster id="c11">
+    <cluster id="c11" correct="yes">
       <mention>local communities</mention>
       <mention>their</mention>
       <mention>them</mention>
     </cluster>
-    <cluster id="c12">
+    <cluster id="c12" correct="yes">
       <mention>a city</mention>
       <mention>its</mention>
     </cluster>
-    <cluster id="c13">
+    <cluster id="c13" correct="no">
       <mention>goes</mention>
       <mention>this</mention>
     </cluster>
-    <cluster id="c14">
+    <cluster id="c14" correct="yes">
       <mention>automobile exhausts</mention>
       <mention>their</mention>
     </cluster>
-    <cluster id="c15">
+    <cluster id="c15" correct="yes">
       <mention>the Administration</mention>
       <mention>the Administration</mention>
       <mention>it</mention>
     </cluster>
-    <cluster id="c16">
+    <cluster id="c16" correct="partially">
       <mention>a long way to go in the fight for a better environment</mention>
       <mention>It</mention>
     </cluster>

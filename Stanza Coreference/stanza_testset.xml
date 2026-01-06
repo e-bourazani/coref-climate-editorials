@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <corpus model="stanza">
   <article id="227646a0.ocr.txt">
-    <cluster id="c1">
+    <cluster id="c1" correct="no">
       <mention>The first report of Mr Russell Train's Council on Environmental Quality is</mention>
       <mention>judicious mixture of tubthumping , political savvy , popular science and good sense .</mention>
       <mention>It</mention>
@@ -18,7 +18,7 @@
       <mention>is</mention>
       <mention>his report</mention>
     </cluster>
-    <cluster id="c2">
+    <cluster id="c2" correct="no">
       <mention>Mr Russell Train's Council</mention>
       <mention>Mr Train's council</mention>
       <mention>Mr Train's report</mention>
@@ -29,7 +29,7 @@
       <mention>Mr Train</mention>
       <mention>he</mention>
     </cluster>
-    <cluster id="c3">
+    <cluster id="c3" correct="yes">
       <mention>Mr Russell Train's Council on Environmental Quality is</mention>
       <mention>the Council on Environmental Quality</mention>
       <mention>Mr Train's council is</mention>
@@ -46,28 +46,28 @@
       <mention>it</mention>
       <mention>the council</mention>
     </cluster>
-    <cluster id="c4">
+    <cluster id="c4" correct="no">
       <mention>Quality is</mention>
       <mention>Environmental Quality</mention>
     </cluster>
-    <cluster id="c5">
+    <cluster id="c5" correct="yes">
       <mention>President Nixon</mention>
       <mention>The President</mention>
       <mention>himself</mention>
       <mention>his</mention>
       <mention>President has</mention>
     </cluster>
-    <cluster id="c6">
+    <cluster id="c6" correct="yes">
       <mention>a people</mention>
       <mention>its</mention>
     </cluster>
-    <cluster id="c7">
+    <cluster id="c7" correct="no">
       <mention>the Administration</mention>
       <mention>Executive Branch and</mention>
       <mention>the Administration</mention>
       <mention>it</mention>
     </cluster>
-    <cluster id="c8">
+    <cluster id="c8" correct="partially">
       <mention>the environment</mention>
       <mention>the environment</mention>
       <mention>the environment</mention>
@@ -76,106 +76,106 @@
       <mention>the environment</mention>
       <mention>one global piece</mention>
     </cluster>
-    <cluster id="c9">
+    <cluster id="c9" correct="no">
       <mention>the setting up of the Council on Environmental Quality</mention>
       <mention>the first sign of the way in which the wind was blowing</mention>
       <mention>this</mention>
     </cluster>
-    <cluster id="c10">
+    <cluster id="c10" correct="yes">
       <mention>the myth that flits from one dinner table to another to the effect that economic growth as such is a potential hazard to the quality of life</mention>
       <mention>the myth</mention>
     </cluster>
-    <cluster id="c11">
+    <cluster id="c11" correct="no">
       <mention>economic growth as such</mention>
       <mention>a potential hazard to the quality of life</mention>
     </cluster>
-    <cluster id="c12">
+    <cluster id="c12" correct="yes">
       <mention>all power stations</mention>
       <mention>their</mention>
     </cluster>
-    <cluster id="c13">
+    <cluster id="c13" correct="partially">
       <mention>hot water</mention>
       <mention>the cause of thermal pollution as it is called</mention>
       <mention>it</mention>
     </cluster>
-    <cluster id="c14">
+    <cluster id="c14" correct="yes">
       <mention>electricity</mention>
       <mention>electricity</mention>
     </cluster>
-    <cluster id="c15">
+    <cluster id="c15" correct="yes">
       <mention>electricity production</mention>
       <mention>a monotonically increasing function of the GNP</mention>
     </cluster>
-    <cluster id="c16">
+    <cluster id="c16" correct="yes">
       <mention>the GNP</mention>
       <mention>more GNP</mention>
       <mention>GNP of a nation such as the United States by</mention>
       <mention>GNP ,</mention>
       <mention>a GNP per head</mention>
     </cluster>
-    <cluster id="c17">
+    <cluster id="c17" correct="yes">
       <mention>United States by</mention>
       <mention>United States (</mention>
       <mention>the United States</mention>
       <mention>the United States</mention>
     </cluster>
-    <cluster id="c18">
+    <cluster id="c18" correct="no">
       <mention>compulsory</mention>
       <mention>fit anti-pollution devices to the exhaust systems of automobiles ,</mention>
     </cluster>
-    <cluster id="c19">
+    <cluster id="c19" correct="no">
       <mention>in</mention>
       <mention>land</mention>
     </cluster>
-    <cluster id="c20">
+    <cluster id="c20" correct="yes">
       <mention>local communities</mention>
       <mention>their</mention>
       <mention>them</mention>
     </cluster>
-    <cluster id="c21">
+    <cluster id="c21" correct="yes">
       <mention>the atmosphere</mention>
       <mention>the atmosphere</mention>
       <mention>the atmosphere</mention>
     </cluster>
-    <cluster id="c22">
+    <cluster id="c22" correct="yes">
       <mention>a city</mention>
       <mention>its</mention>
     </cluster>
-    <cluster id="c23">
+    <cluster id="c23" correct="no">
       <mention>cooperative air conditioning</mention>
       <mention>the only feasible solution</mention>
     </cluster>
-    <cluster id="c24">
+    <cluster id="c24" correct="yes">
       <mention>the institutions set up in Washington in the past few months as devices for persuading voters that something is now about to be done to safeguard the environment</mention>
       <mention>devices for persuading voters that something is now about to be done to safeguard the environment</mention>
       <mention>these devices</mention>
     </cluster>
-    <cluster id="c25">
+    <cluster id="c25" correct="yes">
       <mention>the past few months</mention>
       <mention>the past few months</mention>
     </cluster>
-    <cluster id="c26">
+    <cluster id="c26" correct="yes">
       <mention>Mr Train goes much further than previous sponsors of reports on the environment in drawing attention to the simple proposition that the environment is ultimately indivisible</mention>
       <mention>this</mention>
     </cluster>
-    <cluster id="c27">
+    <cluster id="c27" correct="yes">
       <mention>the simple proposition that the environment is ultimately indivisible</mention>
       <mention>this point of view</mention>
     </cluster>
-    <cluster id="c28">
+    <cluster id="c28" correct="yes">
       <mention>the world</mention>
       <mention>the world</mention>
     </cluster>
-    <cluster id="c29">
+    <cluster id="c29" correct="yes">
       <mention>populations now graduating from bicycles to motor cars</mention>
       <mention>populations now struggling with a GNP per head which is hardly more than one per cent of that in the United States</mention>
     </cluster>
-    <cluster id="c30">
+    <cluster id="c30" correct="yes">
       <mention>automobile exhausts</mention>
       <mention>such a serious nuisance that their use should be severely curtailed</mention>
       <mention>their</mention>
     </cluster>
-    <cluster id="c31">
+    <cluster id="c31" correct="yes">
       <mention>to detach separate problems of air pollution from problems of foreign aid</mention>
       <mention>this test</mention>
     </cluster>
