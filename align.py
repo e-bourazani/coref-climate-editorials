@@ -54,7 +54,10 @@ for item in annotations: # iterate through each annotation item
 with open(OUTPUT_PATH, "w") as f:
     json.dump(corpus_dup, f, indent=2)
 
-print(f"Unmatched annotation paragraphs: {unmatched}")
+#the file is a copy of the original corpus but with an added "annotations" field in each paragraph
+# not all articles are annotated but they are still included, just with empty annotations lists 
+
+# print(f"Unmatched annotation paragraphs: {unmatched}")
 # print the text of the unmatched annotations for debugging
 #for item in annotations:
 #    prgr_text = item["data"]["Text"]

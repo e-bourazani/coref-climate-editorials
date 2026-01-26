@@ -8,33 +8,45 @@ model = FCoref(device='cuda' if torch.cuda.is_available() else 'cpu')
 with open("data/NatSci_annotated.json", "r") as f:
     data = json.load(f)
 
+'''
+##this block identifies salient entities in each article based on the frequency of their roles
+
 articles = data
 role_counts = {} # to store counts of entity-role pairs per article
 salient_entities = {} # to store salient entities per article
 entity_role = {} #to store the role of each salient entity
 
-#count the occurrences of each enityt-role pair in each article
+# identify salient entities based on frequency of roles
 for article in articles:
     art_id = article["article_id"]
     if art_id not in role_counts:
         role_counts[art_id] = {}
-    #if art_id not in salient_entities:
-    #    salient_entities[art_id] = set()
+    if art_id not in salient_entities:
+        salient_entities[art_id] = set()
     for prgr in article["paragraphs"]:
         for ann in prgr["annotations"]:
             key = (ann["text"].lower(), ann["role"]) # entity-role pair as key
             if key not in role_counts[art_id]:
                 role_counts[art_id][key] = 0
             role_counts[art_id][key] = role_counts[art_id].get(key, 0) + 1
-
-#keep role annotated entities only
 for art_id, counts in role_counts.items():
     entity_role[art_id] = {}
     for (entity, role), n in counts.items():
-        #if n >= 2:#a salient entity is defined as one that appears at least twice with the same roles
+        if n >= 2:#a salient entity is defined as one that appears at least twice with the same roles
             entity_role[art_id][entity] = role
+'''
+articles = data
+entity_role = {}
 
-
+# build a mapping that says in article X, entity Y has role Z
+for article in articles:
+    art_id = article["article_id"]
+    entity_role[art_id] = {}
+    for prgr in article["paragraphs"]:
+        for ann in prgr["annotations"]:
+            entity = ann["text"].lower()
+            role = ann["role"]
+            entity_role[art_id][entity] = role
 
 # prepare texts for coref model
 def build_text(article, max_chars=3500): # limit text length to avoid memory issues
@@ -75,7 +87,7 @@ for i in range(0, len(articles), BATCH_SIZE):
             "article_id": art_id,
             "clusters": clusters
         })
-        coref_clusters = [] #store only coref information for articles with annotated entities
+        coref_clusters = [] #store only coref information for articles with annotated paragraphs
 
         for cluster in clusters:                         
             cluster_mentions = [m.lower() for m in cluster]
@@ -94,7 +106,7 @@ for i in range(0, len(articles), BATCH_SIZE):
             "clusters": coref_clusters
         })
 
-#pre-batch cleanup
+#pre-batch cleanup to free memory
     del preds
     gc.collect()
     torch.cuda.empty_cache()
@@ -109,5 +121,5 @@ for i in range(0, len(articles), BATCH_SIZE):
 with open("coref_results/fcoref_full_output.json", "w") as f:
     json.dump(full_coref_out, f, indent=2)
 
-with open("coref_results/fcoref_output.json", "w") as f:
+with open("coref_results/fcoref_annotated_output.json", "w") as f:
     json.dump(coref_out, f, indent=2)
