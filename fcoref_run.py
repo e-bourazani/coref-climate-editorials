@@ -8,33 +8,6 @@ model = FCoref(device='cuda' if torch.cuda.is_available() else 'cpu')
 with open("data/NatSci_annotated.json", "r") as f:
     data = json.load(f)
 
-'''
-##this block identifies salient entities in each article based on the frequency of their roles
-
-articles = data
-role_counts = {} # to store counts of entity-role pairs per article
-salient_entities = {} # to store salient entities per article
-entity_role = {} #to store the role of each salient entity
-
-# identify salient entities based on frequency of roles
-for article in articles:
-    art_id = article["article_id"]
-    if art_id not in role_counts:
-        role_counts[art_id] = {}
-    if art_id not in salient_entities:
-        salient_entities[art_id] = set()
-    for prgr in article["paragraphs"]:
-        for ann in prgr["annotations"]:
-            key = (ann["text"].lower(), ann["role"]) # entity-role pair as key
-            if key not in role_counts[art_id]:
-                role_counts[art_id][key] = 0
-            role_counts[art_id][key] = role_counts[art_id].get(key, 0) + 1
-for art_id, counts in role_counts.items():
-    entity_role[art_id] = {}
-    for (entity, role), n in counts.items():
-        if n >= 2:#a salient entity is defined as one that appears at least twice with the same roles
-            entity_role[art_id][entity] = role
-'''
 articles = data
 entity_role = {}
 
