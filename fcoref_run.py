@@ -103,8 +103,8 @@ for i in range(0, len(articles), BATCH_SIZE):
 
 
 
-with open("coref_results/fcoref_full_output.json", "w") as f:
+with open("model_outputs/fcoref_full_output.json", "w") as f:
     json.dump(full_coref_out, f, indent=2)
 
-with open("coref_results/fcoref_annotated_output.json", "w") as f:
+with open("model_outputs/fcoref_annotated_output.json", "w") as f:
     json.dump(coref_out, f, indent=2)

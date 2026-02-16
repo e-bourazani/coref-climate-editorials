@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import re
 
 #the data in NatSci.csv is structured such that each article starts with a filename ending in ".ocr.txt"
 #the immediate next line is the title, followed by paragraphs of text

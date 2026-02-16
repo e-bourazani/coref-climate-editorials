@@ -1,13 +1,8 @@
 import json
 from collections import defaultdict
+from collections import Counter
 import csv
 
-
-with open("coref_results/fcoref_annotated_output.json", "r") as f:
-    coref_annotated_out = json.load(f)
-
-with open("coref_results/fcoref_salient_only.json", "r") as f:
-    coref_salient_out = json.load(f)
 
 
 def mean(values):
@@ -30,20 +25,15 @@ PRONOUNS = {
 }
 
 
-
 def analyze_dataset(dataset, label):
-
     print(f"{label.upper()}")
-
     n_articles = len(dataset)
     n_with_clusters = sum(1 for a in dataset if a["clusters"])
     n_clusters = sum(len(a["clusters"]) for a in dataset)
-
     print(f"Total articles processed: {n_articles}")
     print(f"Articles with at least 1 coref cluster: {n_with_clusters}")
     print(f"Articles with no clusters: {n_articles - n_with_clusters}")
     print(f"Total clusters: {n_clusters}")
-
     if n_articles > 0:
         print(f"Avg clusters per article: {n_clusters / n_articles:.2f}")
 
@@ -89,15 +79,71 @@ def analyze_dataset(dataset, label):
 
     return role_cluster_sizes, role_pronoun_ratios
 
-baseline_sizes, baseline_ratios = analyze_dataset(
-    coref_annotated_out,
-    "baseline"
-)
 
-salient_sizes, salient_ratios = analyze_dataset(
-    coref_salient_out,
-    "salient"
-)
+
+def compute_alignment(corpus, model_output):
+    # Build lookup: article_id to clusters
+    coref_lookup = {
+        article["article_id"]: article["clusters"]
+        for article in model_output
+    }
+
+    TP = 0
+    FN = 0
+    FP = 0
+
+    for article in corpus:
+        art_id = article["article_id"]
+        mention_counter = Counter()
+        for p in article["paragraphs"]:
+            for ann in p.get("annotations", []):
+                entity = ann["text"].lower().strip()
+                mention_counter[entity] += 1
+
+        gold_entities = {
+            e for e, count in mention_counter.items()
+            if count >= 2
+        }
+
+        predicted_entities = set()
+        for cl in coref_lookup.get(art_id, []):
+            mentions = cl.get("cluster", [])
+            normalized = [m.lower().strip() for m in mentions]
+            mention_counts = Counter(normalized)
+            for e, count in mention_counts.items():
+                if count >= 2: # only treat cluster as positive if it has 2 or more mentions
+                    predicted_entities.add(e)
+
+        TP += len(gold_entities & predicted_entities)
+        FN += len(gold_entities - predicted_entities)
+        FP += len(predicted_entities - gold_entities)
+
+    recall = TP / (TP + FN) if (TP + FN) > 0 else 0
+    precision = TP / (TP + FP) if (TP + FP) > 0 else 0
+    f1 = (
+        2 * precision * recall / (precision + recall)
+        if (precision + recall) > 0 else 0
+    )
+    information_loss = FN / (TP + FN) if (TP + FN) > 0 else 0
+
+    print("TP:", TP)
+    print("FN:", FN)
+    print("FP:", FP)
+    print("Recall:", round(recall, 3))
+    print("Precision:", round(precision, 3))
+    print("F1:", round(f1, 3))
+    print("Information Loss:", round(information_loss, 3))
+
+    return {
+        "TP": TP,
+        "FN": FN,
+        "FP": FP,
+        "recall": recall,
+        "precision": precision,
+        "f1": f1,
+        "information_loss": information_loss,
+    }
+
 
 def export_csv(filename, sizes_dict, ratios_dict):
 
@@ -121,13 +167,3 @@ def export_csv(filename, sizes_dict, ratios_dict):
             ])
 
 
-export_csv(
-    "analysis/role_coref_table_baseline.csv",
-    baseline_sizes,
-    baseline_ratios
-)
-
-export_csv(
-    "analysis/role_coref_table_salient.csv",
-    salient_sizes,
-    salient_ratios)
