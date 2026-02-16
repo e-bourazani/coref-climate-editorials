@@ -1,0 +1,5 @@
+role,n_clusters,avg_cluster_size,median_cluster_size,avg_pronoun_ratio
+Beneficiary,69,4.48,3,0.15
+Hero,338,4.8,3.0,0.16
+Victim,184,4.92,3.0,0.14
+Villain,342,4.52,3.0,0.1
