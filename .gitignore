@@ -4,10 +4,6 @@ F-Coref_test_runs/
 Stanza_Coref_test_runs/
 coref prelim results/
 analysis_old/
-fcoref_salient_run_old.py
-compute_alignment.py
-evaluation.py
-analysis.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
