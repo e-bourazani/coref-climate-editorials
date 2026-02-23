@@ -81,89 +81,114 @@ def analyze_dataset(dataset, label):
 
 
 
-def compute_alignment(corpus, model_output):
-    # Build lookup: article_id to clusters
-    coref_lookup = {
+def compute_post_alignment_entity_loss(
+    corpus,
+    aligned_output,
+    entity_subset=None,
+    label=None
+):
+    """
+    Measures post-alignment entity coverage and loss.
+    If entity_subset is None: evaluates over all annotated entities.
+    If entity_subset is provided:
+        entity_subset must be a dict:
+            article_id -> set(entity)
+        and evaluation is restricted to that subset.
+    """
+
+    aligned_lookup = {
         article["article_id"]: article["clusters"]
-        for article in model_output
+        for article in aligned_output
     }
 
-    TP = 0
-    FN = 0
-    FP = 0
+    total_entities = 0
+    assigned_entities = 0
 
     for article in corpus:
         art_id = article["article_id"]
-        mention_counter = Counter()
-        for p in article["paragraphs"]:
-            for ann in p.get("annotations", []):
-                entity = ann["text"].lower().strip()
-                mention_counter[entity] += 1
-
         gold_entities = {
-            e for e, count in mention_counter.items()
-            if count >= 2
+            ann["text"].lower().strip()
+            for p in article["paragraphs"]
+            for ann in p.get("annotations", [])
         }
 
-        predicted_entities = set()
-        for cl in coref_lookup.get(art_id, []):
-            mentions = cl.get("cluster", [])
-            normalized = [m.lower().strip() for m in mentions]
-            mention_counts = Counter(normalized)
-            for e, count in mention_counts.items():
-                if count >= 2: # only treat cluster as positive if it has 2 or more mentions
-                    predicted_entities.add(e)
+        # If subset provided, restrict to subset
+        if entity_subset is not None:
+            gold_entities = gold_entities & entity_subset.get(art_id, set())
+        total_entities += len(gold_entities)
 
-        TP += len(gold_entities & predicted_entities)
-        FN += len(gold_entities - predicted_entities)
-        FP += len(predicted_entities - gold_entities)
+        aligned_entities = {
+            cl["entity"].lower().strip()
+            for cl in aligned_lookup.get(art_id, [])
+        }
+        assigned_entities += len(gold_entities & aligned_entities)
 
-    recall = TP / (TP + FN) if (TP + FN) > 0 else 0
-    precision = TP / (TP + FP) if (TP + FP) > 0 else 0
-    f1 = (
-        2 * precision * recall / (precision + recall)
-        if (precision + recall) > 0 else 0
+    coverage = (
+        assigned_entities / total_entities
+        if total_entities > 0 else 0
     )
-    information_loss = FN / (TP + FN) if (TP + FN) > 0 else 0
+    post_alignment_entity_loss = 1 - coverage
 
-    print("TP:", TP)
-    print("FN:", FN)
-    print("FP:", FP)
-    print("Recall:", round(recall, 3))
-    print("Precision:", round(precision, 3))
-    print("F1:", round(f1, 3))
-    print("Information Loss:", round(information_loss, 3))
+    if label:
+        print(label.upper())
+
+    print("Total evaluated entities:", total_entities)
+    print("Entities assigned a cluster:", assigned_entities)
+    print("Entity Coverage:", round(coverage, 3))
+    print("Post-alignment Entity Loss:", round(post_alignment_entity_loss, 3))
 
     return {
-        "TP": TP,
-        "FN": FN,
-        "FP": FP,
-        "recall": recall,
-        "precision": precision,
-        "f1": f1,
-        "information_loss": information_loss,
+        "total_entities": total_entities,
+        "assigned_entities": assigned_entities,
+        "entity_coverage": coverage,
+        "post_alignment_entity_loss": post_alignment_entity_loss,
     }
 
 
-def export_csv(filename, sizes_dict, ratios_dict):
+def export_csv(filename,sizes_dict,ratios_dict,coverage_metrics=None):
+    """
+    Exports:
+    >Global coverage metrics (if provided)
+    >Role-level cluster statistics
+    """
 
     with open(filename, "w", newline="") as f:
         writer = csv.writer(f)
+        if coverage_metrics:
+            writer.writerow(["GLOBAL METRICS"])
+            writer.writerow(["total_evaluated_entities",
+                             coverage_metrics["total_entities"]])
+            writer.writerow(["entities_assigned_cluster",
+                             coverage_metrics["assigned_entities"]])
+            writer.writerow(["entity_coverage",
+                             round(coverage_metrics["entity_coverage"], 3)])
+            writer.writerow(["post_alignment_entity_loss",
+                             round(coverage_metrics["post_alignment_entity_loss"], 3)])
+            writer.writerow([])  # empty row for separation
+
+    
         writer.writerow([
             "role",
             "n_clusters",
             "avg_cluster_size",
             "median_cluster_size",
+            "min_cluster_size",
+            "max_cluster_size",
             "avg_pronoun_ratio"
         ])
 
         for role in sorted(sizes_dict.keys()):
+            sizes = sizes_dict[role]
+            ratios = ratios_dict[role]
+
             writer.writerow([
                 role,
-                len(sizes_dict[role]),
-                round(mean(sizes_dict[role]), 2),
-                round(median(sizes_dict[role]), 2),
-                round(mean(ratios_dict[role]), 2)
+                len(sizes),
+                round(mean(sizes), 2),
+                round(median(sizes), 2),
+                min(sizes),
+                max(sizes),
+                round(mean(ratios), 2)
             ])
 
 

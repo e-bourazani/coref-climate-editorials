@@ -73,10 +73,9 @@ for i in range(0, len(articles), BATCH_SIZE):
                 match = False # flag to track whether this entity matches any mention in the cluster
                 for mention in cluster_norm:
                     mention_tokens = set(mention.split()) # tokenize the cluster mention into a set of words
-                    if entity_tokens.issubset(mention_tokens):
+                    if entity_tokens.issubset(mention_tokens): #All tokens of the annotated entity must appear in the mention
                     # Check if ALL words of the annotated entity are contained in the cluster mention
-                    # This allows matching:
-                    # "montreal protocol" with "the montreal protocol which commits..."
+                    # This allows matching: "montreal protocol" with "the montreal protocol which commits..."
                         match = True
                         break
                 if match:
