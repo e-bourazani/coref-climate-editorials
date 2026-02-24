@@ -7,37 +7,43 @@ import re
 #this structure will be parsed into a list of articles with their titles and paragraphs
 
 
-df = pd.read_csv('data/NatSci.csv', sep=';') #the data is separated by semicolons
+def preprocess():
 
-articles = []
-current_article = None
+    df = pd.read_csv('data/NatSci.csv', sep=';') #the data is separated by semicolons
 
-for _, row in df.iterrows():
-    text = str(row["Text"]).strip()
+    articles = []
+    current_article = None
 
-    # New article starts
-    if text.endswith(".ocr.txt"):
-        if current_article:
-            articles.append(current_article)
+    for _, row in df.iterrows():
+        text = str(row["Text"]).strip()
 
-        current_article = {
-            "article_id": text,
-            "title": None,
-            "paragraphs": []
-        }
+        # New article starts
+        if text.endswith(".ocr.txt"):
+            if current_article:
+                articles.append(current_article)
 
-    # Title (first non-filename line)
-    elif current_article and current_article["title"] is None:
-        current_article["title"] = text
+            current_article = {
+                "article_id": text,
+                "title": None,
+                "paragraphs": []
+            }
 
-    # Paragraph
-    elif current_article:
-        current_article["paragraphs"].append(text)
+        # title (first non-filename line)
+        elif current_article and current_article["title"] is None:
+            current_article["title"] = text
 
-# Add last article
-if current_article:
-    articles.append(current_article)
+        # paragraph
+        elif current_article:
+            current_article["paragraphs"].append(text)
 
-with open('data/processed_data.json', 'w') as f:
-    for a in articles:
-        f.write(json.dumps(a) + '\n')
+
+    if current_article:
+        articles.append(current_article)
+
+    with open('data/processed_data.json', 'w') as f:
+        for a in articles:
+            f.write(json.dumps(a) + '\n')
+
+
+if __name__ == "__main__":
+    preprocess()
