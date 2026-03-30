@@ -1,7 +1,9 @@
 # Coreference resolution for role entities in Science and Nature editorials
 
 ## Overview
-This project implements discourse analysis through coreference resolution, to investigate what coreference behavior reveals about discourse entities in science/nature editorials.
+This project implements discourse analysis through coreference resolution, to investigate what coreference behavior reveals about discourse entities in climate change editorials. 
+The dataset is derived from the NatSciEdCC corpus(Stede et el.,2023).
+The models used for automatic coreference resolution are F-Coref (Otmazgin et al., 2022) and Stanza Coreference (Qi et al., 2020).
 
 The pipeline consists of five stages:
 1. Preprocessing raw csv data
