@@ -5,6 +5,7 @@ Stanza_Coref_test_runs/
 coref prelim results/
 analysis_old/
 analysis/
+extract_Examples.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
