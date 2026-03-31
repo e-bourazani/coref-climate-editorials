@@ -1,3 +1,9 @@
+GLOBAL METRICS
+total_evaluated_entities,7972
+entities_assigned_cluster,2702
+entity_coverage,0.339
+post_alignment_entity_loss,0.661
+
 role,n_clusters,avg_cluster_size,median_cluster_size,min_cluster_size,max_cluster_size,avg_pronoun_ratio
 Beneficiary,385,4.26,3,2,39,0.18
 Hero,1533,4.0,3,2,30,0.15

@@ -4,7 +4,6 @@ from collections import Counter
 import csv
 
 
-
 def mean(values):
     return sum(values) / len(values) if values else 0.0
 
@@ -17,15 +16,15 @@ def median(values):
     return (values[mid - 1] + values[mid]) / 2 if n % 2 == 0 else values[mid]
 
 
-PRONOUNS = {
+def analyze_dataset(dataset, label):
+    
+    PRONOUNS = {
     "he", "she", "it", "they",
     "him", "her", "them",
     "his", "hers", "their", "theirs", "its",
     "himself", "herself", "itself", "themselves"
-}
+    }
 
-
-def analyze_dataset(dataset, label):
     print(f"{label.upper()}")
     n_articles = len(dataset)
     n_with_clusters = sum(1 for a in dataset if a["clusters"])
@@ -190,5 +189,3 @@ def export_csv(filename,sizes_dict,ratios_dict,coverage_metrics=None):
                 max(sizes),
                 round(mean(ratios), 2)
             ])
-
-
