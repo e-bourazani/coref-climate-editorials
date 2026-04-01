@@ -79,5 +79,5 @@ To run everything execure:
 ``` 
 python main.py
 ```
-
+To run a specific step, use the flag --step
 
